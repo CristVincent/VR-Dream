@@ -1,0 +1,225 @@
+﻿<div id="window-title">
+    查看
+    <div class="detail-close pull-right" ng-click="cancel()"><i class="fa fa-times"></i></div>
+</div>
+<form name="dataForm">
+    <div id="window-body">
+        <div class="container-fluid">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">任务信息</h3>
+                </div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="row">
+                                <div class="col-md-2 detail-lable">项目名称：</div>
+                                <div class="col-md-10">
+                                    {{dataModel.Task.Name}}
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-2 detail-lable">描述：</div>
+                                <div class="col-md-10">
+                                    {{dataModel.Task.Description}}
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-2 detail-lable">项目费用：</div>
+                                <div class="col-md-10">
+                                    {{dataModel.Task.Fee}}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="panel panel-default"  ng-show="dataModel.Task.TaskStatus>0 || currentUserType=='admin'">
+                <div class="panel-heading">
+                    <h3 class="panel-title">文档</h3>
+                </div>
+                <div class="panel-body">
+                    <div class="row">
+                        <table class="table table-striped" style="background-color: white; margin-bottom: 0px">
+                            <thead>
+                                <tr>
+                                    <th st-ratio="7">序号</th>
+                                    <th st-ratio="10">时间</th>
+                                    <th st-ratio="10">用户</th>
+                                    <th st-ratio="10">文件名</th>
+                                    <th st-ratio="10">操作</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="item in dataModel.FileList">
+                                    <td st-ratio="7">{{item.Index}}</td>
+                                    <td st-ratio="10">{{item.HandleTimeStr}}</td>
+                                    <td st-ratio="10">{{item.UserName}}</td>
+                                    <td st-ratio="10">{{item.FileName}}</td>
+                                    <td st-ratio="10"><a href={{item.Url}}>下载</a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-2 detail-lable">上传文件：</div>
+                        <div class="col-md-10">
+                            <input type="file" nv-file-select="" uploader="uploader"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="panel panel-default"  ng-show="dataModel.Task.TaskStatus>0 || currentUserType=='admin'">
+                <div class="panel-heading">
+                    <h3 class="panel-title">处理过程</h3>
+                </div>
+                <div class="panel-body">
+                    <div class="row">
+                        <table class="table table-striped" style="background-color: white; margin-bottom: 0px">
+                            <thead>
+                                <tr>
+                                    <th st-ratio="7">序号</th>
+                                    <th st-ratio="10">处理时间</th>
+                                    <th st-ratio="10">用户</th>
+                                    <th st-ratio="10">动作</th>
+                                    <th st-ratio="10">备注</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="item in dataModel.HandleList">
+                                    <td st-ratio="7">{{item.Index}}</td>
+                                    <td st-ratio="10">{{item.HandleTimeStr}}</td>
+                                    <td st-ratio="10">{{item.UserName}}</td>
+                                    <td st-ratio="10">{{item.Action}}</td>
+                                    <td st-ratio="10">{{item.Remark}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="panel panel-default"  ng-show="dataModel.Task.TaskStatus>0 || currentUserType=='admin'">
+                <div class="panel-heading">
+                    <h3 class="panel-title">操作</h3>
+                </div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="row" ng-show="dataModel.Task.TaskStatus==1 && currentUserType==''">
+                                <div class="row">
+                                    <div class="col-md-2 detail-lable">
+                                        <p class="text-success">审核任务</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-2 detail-lable">操作:</div>
+                                    <div class="col-md-10">
+                                        <button class="btn btn-default btn-rounded" ng-click="TaskStatus2()">回退任务</button>
+                                        <button class="btn btn-default btn-rounded" ng-click="TaskStatus3()">申请审核</button>
+                                    </div>
+                                </div>
+                                <div class="row" style="margin-top: 10px;">
+                                    <div class="col-md-2 detail-lable">备注：</div>
+                                    <div class="col-md-10">
+                                        <textarea class="form-control" type="text" ng-model="Remark" rows="2" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row" ng-show="dataModel.Task.TaskStatus==2">
+                                <div class="row">
+                                    <div class="col-md-2 detail-lable">
+                                        <p class="text-success">回退任务,任务结束</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row" ng-show="dataModel.Task.TaskStatus==3 && currentUserType=='admin'">
+                                <div class="row">
+                                    <div class="col-md-2 detail-lable">
+                                        <p class="text-success">审核任务</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-2 detail-lable">操作：</div>
+                                    <div class="col-md-10">
+                                        <button class="btn btn-default btn-rounded" ng-click="TaskStatus4()">审核未通过</button>
+                                        <button class="btn btn-default btn-rounded" ng-click="TaskStatus5()">审核完成</button>
+                                    </div>
+                                </div>
+                                <div class="row" style="margin-top: 10px;">
+                                    <div class="col-md-2 detail-lable">备注：</div>
+                                    <div class="col-md-10">
+                                        <textarea class="form-control" type="text" ng-model="Remark" rows="2" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row" ng-show="dataModel.Task.TaskStatus==3 && currentUserType==''">
+                                <div class="row">
+                                    <div class="col-md-2 detail-lable">
+                                        <p class="text-success">管理员正在审核中</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row" ng-show="dataModel.Task.TaskStatus==4 && currentUserType==''">
+                                <div class="row">
+                                    <div class="col-md-2 detail-lable">
+                                        <p class="text-success">审核未通过，请按商家要求重新提交</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-2 detail-lable">操作：</div>
+                                    <div class="col-md-10">
+                                        <button class="btn btn-default btn-rounded" ng-click="TaskStatus2()">回退任务</button>
+                                        <button class="btn btn-default btn-rounded" ng-click="TaskStatus3()">申请审核</button>
+                                    </div>
+                                </div>
+                                <div class="row" style="margin-top: 10px;">
+                                    <div class="col-md-2 detail-lable">备注：</div>
+                                    <div class="col-md-10">
+                                        <textarea class="form-control" type="text" ng-model="Remark" rows="2" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row" ng-show="dataModel.Task.TaskStatus==5 && dataModel.Task.FeeStatus==0 && currentUserType=='admin'">
+                                <div class="row">
+                                    <div class="col-md-2 detail-lable">
+                                        <p class="text-success">支付费用</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-2 detail-lable">操作：</div>
+                                    <div class="col-md-10">
+                                        <button class="btn btn-success btn-rounded" ng-click="TaskFeeStatus()">支付</button>
+                                    </div>
+                                </div>
+                                <div class="row" style="margin-top: 10px;">
+                                    <div class="col-md-2 detail-lable">备注：</div>
+                                    <div class="col-md-10">
+                                        <textarea class="form-control" type="text" ng-model="Remark" rows="2" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row" ng-show="dataModel.Task.TaskStatus==5 && dataModel.Task.FeeStatus==0 && currentUserType==''">
+                                <div class="row">
+                                    <div class="col-md-2 detail-lable">
+                                        <p class="text-success">审核完成，正等待商家支付！</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row" ng-show="dataModel.Task.TaskStatus==5 && dataModel.Task.FeeStatus==1">
+                                <div class="row">
+                                    <div class="col-md-2 detail-lable">
+                                        <p class="text-success">任务完成</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button class="btn btn-default btn-rounded" ng-click="cancel()">关闭窗口</button>
+    </div>
+</form>

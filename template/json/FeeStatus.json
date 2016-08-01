@@ -1,0 +1,10 @@
+﻿[
+    {
+        "Value": 0,
+        "Description": "已付款"
+    },
+    {
+        "Value": 1,
+        "Description": "未付款"
+    }
+]

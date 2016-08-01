@@ -1,0 +1,331 @@
+﻿.reset-magin
+{
+    background-color: #54b2f3;
+    height: 100%;
+}
+
+.reset-logo
+{
+    background-image: url(../../../imgs/logo.png);
+    background-position: left;
+    background-repeat: no-repeat;
+    height: 37px;
+    margin-left: 55px;
+    margin-top: 35px;
+}
+
+.reset-foot
+{
+    background-image: url(../../../imgs/cloud.png);
+    background-position: bottom;
+    background-size: 100% 100%;
+    height: 110px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    margin: 0px;
+    padding: 0px;
+}
+
+    .reset-foot label
+    {
+        font-size: 13px;
+        margin-top: 60px;
+        color: #0062a5;
+    }
+
+
+
+.reset-container
+{
+    text-align: center;
+}
+
+.reset-content
+{
+    width: 500px;
+    height: 360px;
+    padding: 10px 10px 0px 10px;
+    background: #FFF;
+    border: 1px solid #DDD;
+    box-shadow: 0 0 6px rgba(0,0,0,.10);
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    margin-top: 6%;
+    border-radius: 3px;
+}
+
+@media (max-width: 500px) {
+	.reset-content {
+		width: 100%;
+		margin: 20px auto 0;
+	}
+}
+
+    .reset-content input
+    {
+        width: 100%;
+        height: 40px;
+        margin: 6% 0;
+    }
+
+.reset-header
+{
+    color: #54b2f3;
+    float: left;
+    margin-top: 0px;
+    height: auto;
+    font-size: 15px;
+    font-weight: 600;
+    color: #0062a5;
+}
+
+.reset-login
+{
+    color: #429eeb;
+}
+
+.loginLink
+{
+    font-size: 12px;
+    font-weight: 600;
+    float: right;
+}
+
+.reset-input
+{
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+    width: 85%;
+}
+
+.reset-valiCode
+{
+    width: 75%;
+}
+
+.reset-valiImg
+{
+    float: right;
+    height: 40px;
+    width: 80px;
+    margin-top: -59px;
+    position:relative;
+}
+
+.reset-btnDiv
+{
+    margin-top:-15px;
+    margin-left:auto;
+    margin-right:auto;
+    display:inline-block;
+}
+
+.reset-back
+{
+    width: 80px;
+    height: 40px;
+    margin-top: 30px;
+    background-color: #89c941;
+    border-color: #89c941;
+    font-weight: 600;
+    border-radius: 20px;
+    color: white;
+    display:inline;
+}
+
+    .reset-back:hover
+    {
+        width: 80px;
+        height: 40px;
+        background-color: #67b312;
+        border-color: #67b312;
+        font-weight: 600;
+        border-radius: 20px;
+        color: white;
+    }
+
+    .reset-back:focus
+    {
+        outline: 0 !important;
+        color:white;
+    }
+
+.reset-next
+{
+    width: 280px;
+    height: 40px;
+    margin-top: 30px;
+    background-color: #429eeb;
+    font-weight: 600;
+    border-radius: 20px;
+    color: white;
+    display:inline;
+}
+
+    .reset-next:hover
+    {
+        background-color: #2784d2;
+        border-color: #2784d2;
+        font-weight: 600;
+        border-radius: 20px;
+        color: white;
+    }
+
+    .reset-next:focus
+    {
+        outline: 0 !important;
+        color: white;
+    }
+
+.btn-vali
+{
+    width: 95px;
+    height: 40px;
+    margin-top: -58px;
+    background-color: #f0f2f5;
+    border-color: #c7ced3;
+    font-weight: 600;
+    color: black;
+    float: right;
+    text-align:center;
+    padding-top:9px;
+}
+
+    .btn-vali:hover
+    {
+        background-color: #fafafa;
+        border-color: #c7ced3;
+        font-weight: 600;
+        color: black;
+        float: right;
+    }
+
+#emailAdress
+{
+    color: red;
+}
+
+
+.vali-message
+{
+    color:red;
+    padding:0px;
+    float:left;
+    margin-top:-10px;
+    font-size:12px;
+    position:fixed
+}
+
+.reset-icon
+{
+    padding:4px;
+}
+
+
+
+
+.tab-custom
+{
+    background: #fff;
+    border-radius: 3px;
+    padding: 0px;
+    margin-top: -20px;
+    margin-bottom: 0px;
+}
+
+    .tab-custom > .tabs
+    {
+        margin: 0;
+        border-bottom: 1px solid #429eeb;
+        border-top-right-radius: 3px;
+        border-top-left-radius: 3px;
+    }
+
+        .tab-custom > .tabs > li
+        {
+            border-top: 1px solid transparent;
+            margin-bottom: -1px;
+            margin-right: 10px;
+            height: 30px;
+        }
+
+            .tab-custom > .tabs > li > a
+            {
+                color: black;
+                border-radius: 0 !important;
+                font-size: 12px;
+                padding-top: 6px;
+            }
+
+                .tab-custom > .tabs > li > a,
+                .tab-custom > .tabs > li > a:hover
+                {
+                    background: transparent;
+                    margin: 0;
+                }
+
+                    .tab-custom > .tabs > li > a:hover
+                    {
+                        color: #999;
+                    }
+
+            .tab-custom > .tabs > li:not(.active) > a:hover,
+            .tab-custom > .tabs > li:not(.active) > a:focus,
+            .tab-custom > .tabs > li:not(.active) > a:active
+            {
+                border-color: transparent;
+            }
+
+            .tab-custom > .tabs > li.active
+            {
+                border: 1px solid #429eeb;
+                border-bottom: 0px;
+            }
+
+                .tab-custom > .tabs > li.active > a,
+                .tab-custom > .tabs > li.active:hover > a
+                {
+                    background-color: #fff;
+                    color: black;
+                    font-weight: 600;
+                }
+
+        .tab-custom > .tabs.pull-right
+        {
+            float: none!important;
+        }
+
+            .tab-custom > .tabs.pull-right > li
+            {
+                float: right;
+            }
+
+                .tab-custom > .tabs.pull-right > li:first-of-type
+                {
+                    margin-right: 0;
+                }
+
+                    .tab-custom > .tabs.pull-right > li:first-of-type > a
+                    {
+                        border-left-width: 1px;
+                    }
+
+                    .tab-custom > .tabs.pull-right > li:first-of-type.active > a
+                    {
+                        border-left-color: red;
+                        border-right-color: transparent;
+                        color: black;
+                    }
+
+    .tab-custom > .tab-content
+    {
+        background: #fff;
+        padding: -50px 0px;
+        border-bottom-right-radius: 3px;
+        border-bottom-left-radius: 3px;
+    }

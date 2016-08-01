@@ -1,0 +1,42 @@
+﻿<div id="window-title">
+    发布任务
+    <div class="detail-close pull-right" ng-click="cancel()"><i class="fa fa-times"></i></div>
+</div>
+<form name="dataForm">
+    <div id="window-body">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="row">
+                        <div class="col-md-2 detail-lable">项目名称：</div>
+                        <div class="col-md-10">
+                            <input class="form-control" type="text" ng-model="dataModel.Name"/>
+                        </div>
+                    </div>
+                    <div class="row"  style="margin-top: 10px;">
+                        <div class="col-md-2 detail-lable">描述：</div>
+                        <div class="col-md-10">
+                            <textarea class="form-control" type="text" ng-model="dataModel.Description" rows="2"/>
+                        </div>
+                    </div>
+                    <div class="row"  style="margin-top: 10px;">
+                        <div class="col-md-2 detail-lable">项目费用：</div>
+                        <div class="col-md-10">
+                            <input class="form-control" type="number" ng-model="dataModel.Fee"/>
+                        </div>
+                    </div>
+                     <div class="row"  style="margin-top: 10px;">     
+                        <div class="col-md-2 detail-lable"></div>                   
+                        <div class="col-md-10">
+                            <input type="file" nv-file-select="" uploader="uploader"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button class="btn btn-success btn-rounded" ng-click="ok()">保存</button>
+        <button class="btn btn-default btn-rounded" ng-click="cancel()">取消</button>
+    </div>
+</form>

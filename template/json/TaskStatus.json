@@ -1,0 +1,26 @@
+﻿[
+    {
+        "Value": 0,
+        "Description": "全部"
+    },
+    {
+        "Value": 1,
+        "Description": "退回"
+    },
+    {
+        "Value": 2,
+        "Description": "已完成"
+    },
+    {
+        "Value": 3,
+        "Description": "审核中"
+    },
+    {
+        "Value": 4,
+        "Description": "已付款"
+    },
+    {
+        "Value": 5,
+        "Description": "未付款"
+    }
+]

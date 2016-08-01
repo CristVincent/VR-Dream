@@ -1,0 +1,218 @@
+﻿<div class="wrapper">
+    <!-- Main Header -->
+    <header class="main-header">
+
+        <!-- Logo -->
+        <a class="logo">
+            <!-- mini logo for sidebar mini 50x50 pixels -->
+            <span class="logo-mini">IDMM</span>
+            <!-- logo for regular state and mobile devices -->
+            <span class="logo-lg"><b>室内地图制作平台</b></span>
+        </a>
+
+        <!-- Header Navbar -->
+        <nav class="navbar navbar-static-top" role="navigation">
+            <!-- Sidebar toggle button-->
+            <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+                <span class="sr-only">Toggle navigation</span>
+            </a>
+            <!-- Navbar Right Menu -->
+            <div class="navbar-custom-menu">
+                <ul class="nav navbar-nav">
+                    <!-- 其他三个通知栏图标,林俊杰删除,有需要再添加 -->
+                    <!-- User Account Menu -->
+                    <li class="dropdown user user-menu">
+                        <!-- Menu Toggle Button -->
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            <!-- The user image in the navbar-->
+                            <img ng-src="imgs/user-128x128.jpg" class="user-image" alt="User Image" />
+                            <!-- hidden-xs hides the username on small devices so only the image appears. -->
+                            <span class="hidden-xs">{{currentUser.Name}}</span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <!-- The user image in the menu -->
+                            <li class="user-header">
+                                <img src="imgs/user-128x128.jpg" class="img-circle" alt="User Image" />
+                                <p>
+                                    {{currentUser.Name}} - {{currentUser.Type}}
+                                    <small>{{currentUser.Email}}</small>
+                                </p>
+                            </li>
+                            <!-- Menu Body -->
+                            <!--<li class="user-body">
+                                <div >
+                                    <img id="qq" title="绑定QQ" alt="绑定QQ" src="../imgs/qq.png" ng-click="QQLogin()"/>
+                                    <img id="weixin" title="绑定微信" alt="绑定微信" src="../imgs/weixin.png" ng-click="WeChatLogin()"/>
+                                </div>
+                            </li>-->
+
+                            <!--<li class="user-body">
+                                <div class="col-xs-4 text-center">
+                                    <a href="#">Followers</a>
+                                </div>
+                                <div class="col-xs-4 text-center">
+                                    <a href="#">Sales</a>
+                                </div>
+                                <div class="col-xs-4 text-center">
+                                    <a href="#">Friends</a>
+                                </div>
+                            </li>-->
+                            <!-- Menu Footer-->
+                            <li class="user-footer">
+                                <!--<div class="pull-left">
+                                    <a href="#" class="btn btn-default btn-flat">Profile</a>
+                                </div>-->
+                                <div class="pull-right">
+                                    <a href="javascript:;" class="btn btn-default btn-flat">修改密码</a> <a href="javascript:;" class="btn btn-default btn-flat">注销</a>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>                    
+                    <!--<li>
+                        <a href="#"><i class="fa fa-question-circle"></i></a>
+                    </li>-->
+                    <!-- Control Sidebar Toggle Button -->
+                    <!--<li>
+                        <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
+                    </li>-->
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <!-- Left side column. contains the logo and sidebar -->
+    <aside class="main-sidebar">
+
+        <!-- sidebar: style can be found in sidebar.less -->
+        <section class="sidebar">
+
+            <!-- Sidebar user panel (optional) -->
+            <!-- 用户头像和在线状态,林俊杰删除,有需要再添加 -->
+
+            <!-- search form (Optional) -->
+            <!--<form action="#" method="get" class="sidebar-form">
+                <div class="input-group">
+                    <input type="text" name="q" class="form-control" placeholder="Search..." />
+                    <span class="input-group-btn">
+                        <button type='submit' name='search' id='search-btn' class="btn btn-flat"><i class="fa fa-search"></i></button>
+                    </span>
+                </div>
+            </form>-->
+            <!-- /.search form -->
+
+            <!-- Sidebar Menu -->
+            <ul class="sidebar-menu">
+                <!--<li class="header">菜单</li>-->
+                <!--<li class="header">
+                    <div class="row" >
+                        <div class="col-md-12">
+                            <select class="form-control" ng-options="obj.App_Name for obj in apps" ng-change="appChange()" ng-model="CurrentApp"></select>
+                        </div>
+                    </div>
+                </li>-->
+                <!-- Optionally, you can add icons to the links -->
+                <!--<li ng-repeat="menu in menus"><a href="{{menu.Url}}"><i class='{{menu.Icon}}'></i><span>{{menu.Name}}</span></a></li>-->
+                <!--<t-tree-menu menucontext="menus"></t-tree-menu>-->
+                <li ng-show="currentUserType=='admin'"><a href="#/main/taskManage"><i class='fa fa-list'></i><span>任务管理</span></a></li>
+                <li ng-show="currentUserType==''"><a href="#/main/getTask"><i class='fa fa-envelope-o'></i><span>领取任务</span></a></li>
+                <li ng-show="currentUserType==''"><a href="#/main/myTask"><i class='fa fa-users'></i><span>我的任务</span></a></li>
+                <!--<li><a href="#/main/userManage"><i class='fa fa-users'></i><span>用户管理</span></a></li>
+                <li><a href="#/main/orgManage"><i class='fa fa-sitemap'></i><span>组织机构管理</span></a></li>
+                <li><a href="#/main/roleManage"><i class='fa fa-user-secret'></i><span>角色管理</span></a></li>
+                <li><a href="#/main/competenceRsrcManage"><i class='fa fa-cogs'></i><span>权限资源管理</span></a></li>
+                <li><a href="#/main/dictionaryManage"><i class='fa fa-book'></i><span>字典管理</span></a></li>
+                <li><a href="#/main/logManage"><i class='fa fa-file-text-o'></i><span>日志管理</span></a></li>
+                <li><a href="#/main/onlineUserManage"><i class='fa fa-desktop'></i><span>在线用户管理</span></a></li>
+                <li><a href="#/main/appManage"><i class='fa fa-desktop'></i><span>项目管理</span></a></li>
+                <li><a href="#/main/areaManage"><i class='fa fa-desktop'></i><span>区域管理</span></a></li>-->
+                <!--For Menu Demo
+                     <li class="treeview">
+                      <a href="#"><i class='fa fa-link'></i> <span>Multilevel</span> <i class="fa fa-angle-left pull-right"></i></a>
+                      <ul class="treeview-menu">
+                        <li><a href="#">Link in level 2</a></li>
+                        <li><a href="#">Link in level 2</a></li>
+                      </ul>
+                    </li>-->
+            </ul>
+            <!-- /.sidebar-menu -->
+        </section>
+        <!-- /.sidebar -->
+    </aside>
+
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper" ui-view>
+    </div>
+    <!-- /.content-wrapper -->
+
+    <!-- Main Footer -->
+    <!-- 底部版权申明,林俊杰删除,有需要再添加 -->
+
+    <!-- Control Sidebar -->
+    <aside class="control-sidebar control-sidebar-dark">
+        <!-- Create the tabs -->
+        <ul class="nav nav-tabs nav-justified control-sidebar-tabs">
+            <li class="active"><a href="#control-sidebar-home-tab" data-toggle="tab"><i class="fa fa-home"></i></a></li>
+            <li><a href="#control-sidebar-settings-tab" data-toggle="tab"><i class="fa fa-gears"></i></a></li>
+        </ul>
+        <!-- Tab panes -->
+        <div class="tab-content">
+            <!-- Home tab content -->
+            <div class="tab-pane active" id="control-sidebar-home-tab">
+                <h3 class="control-sidebar-heading">Recent Activity</h3>
+                <ul class='control-sidebar-menu'>
+                    <li>
+                        <a href='javascript::;'>
+                            <i class="menu-icon fa fa-birthday-cake bg-red"></i>
+                            <div class="menu-info">
+                                <h4 class="control-sidebar-subheading">Langdon's Birthday</h4>
+                                <p>Will be 23 on April 24th</p>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+                <!-- /.control-sidebar-menu -->
+
+                <h3 class="control-sidebar-heading">Tasks Progress</h3>
+                <ul class='control-sidebar-menu'>
+                    <li>
+                        <a href='javascript::;'>
+                            <h4 class="control-sidebar-subheading">Custom Template Design
+                    <span class="label label-danger pull-right">70%</span>
+                            </h4>
+                            <div class="progress progress-xxs">
+                                <div class="progress-bar progress-bar-danger" style="width: 70%"></div>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+                <!-- /.control-sidebar-menu -->
+
+            </div>
+            <!-- /.tab-pane -->
+            <!-- Stats tab content -->
+            <div class="tab-pane" id="control-sidebar-stats-tab">Stats Tab Content</div>
+            <!-- /.tab-pane -->
+            <!-- Settings tab content -->
+            <div class="tab-pane" id="control-sidebar-settings-tab">
+                <form method="post">
+                    <h3 class="control-sidebar-heading">General Settings</h3>
+                    <div class="form-group">
+                        <label class="control-sidebar-subheading">
+                            Report panel usage
+                                <input type="checkbox" class="pull-right" checked />
+                        </label>
+                        <p>
+                            Some information about this general settings option
+                        </p>
+                    </div>
+                    <!-- /.form-group -->
+                </form>
+            </div>
+            <!-- /.tab-pane -->
+        </div>
+    </aside>
+    <!-- /.control-sidebar -->
+    <!-- Add the sidebar's background. This div must be placed
+           immediately after the control sidebar -->
+    <div class='control-sidebar-bg'></div>
+</div>
+<!-- ./wrapper -->

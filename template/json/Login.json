@@ -1,0 +1,9 @@
+﻿{
+    "State": true,	
+    "UserInfo": {
+		"Type":"Admin",
+		"Id":"A001",
+		"Name":"张三",
+		"Email":"vip@qq.com"
+	}
+}
